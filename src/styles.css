@@ -8,34 +8,38 @@ h1 {
     font-size: 100px;
 }
 h2, h3 {
-color: #444;
-font-family: Arial, Helvetica, sans-serif;
-font-weight: lighter;
+    color: #444;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
 }
 body, input[type="text"], button {
-color: #333;
-font-family: Cambria, Georgia, serif;
+    color: #333;
+    font-family: Cambria, Georgia, serif;
 }
 button {
-background-color: #eee;
-border: none;
-border-radius: 4px;
-cursor: pointer;
-color: black;
-font-size: 1.2rem;
-padding: 1rem;
-margin-right: 1rem;
-margin-bottom: 1rem;
-margin-top: 1rem;
+    background-color: darkred;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: whitesmoke;
+    font-size: 1.2rem;
+    padding: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 }
 button:hover {
-background-color: black;
-color: white;
+    background-color: rgb(141, 23, 23);
+    color: white;
 }
 button:disabled {
-background-color: #eee;
-color: #aaa;
-cursor: auto;
+    background-color: #eee;
+    color: #aaa;
+    cursor: auto;
+}
+section {
+    padding: 10px 10em 10px 10em;
+    margin-top: 10px;
 }
 .marvel-font{
     font-family: "Marvel";
@@ -43,10 +47,10 @@ cursor: auto;
     letter-spacing: 3px;
 }
 .header-img {
-    height: 600px;
+    height: 800px;
     background-image: url('./assets/wallpaper.png');
     background-repeat: no-repeat;
-    background-size: 100% 150%;
+    background-size: cover;
     opacity: 10%;
     overflow: hidden;
 }
@@ -68,8 +72,16 @@ cursor: auto;
     width: 100%;
 }
 #toolbar-text {
-    font-size: 18px;
+    font-size: 20px;
     color: rgb(104, 96, 96);
+}
+@media screen and (max-width: 767px) {
+    .header-text h1{
+        margin: 0;
+    }
+    .header-text {
+        padding: 0;
+    }
 }
 
 /* everywhere else */

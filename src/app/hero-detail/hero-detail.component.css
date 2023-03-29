@@ -1,0 +1,41 @@
+#hero-details-section{
+    min-height: 1000px;
+    padding: 10px 10em 10px 10em;
+
+}
+
+.hero-details span,
+.hero-details p{
+    font-size: 18px;
+}
+.hero-name{
+    padding:10px;
+}
+.hero-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.hero-description{
+    text-align: justify;
+    width: 90%;
+    padding: 10px 0px 10px 0px;
+
+}
+aside {
+    background-color:  lightgray;
+    width: 400px;
+    height: 100%;
+}
+.hero-figure{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 10px;
+}
+figcaption {
+    text-align: center;
+    font-weight: bold;
+    padding: 10px 0;
+}

@@ -1,0 +1,23 @@
+<section *ngIf="hero" id="hero-details-section" class="hero-details">
+    <div class="hero-name">
+        <h2>{{hero.name}} Details</h2>
+    </div>
+    <hr>
+    <br>
+    <div class="hero-content">
+        <div>
+            <p><strong>Name:&nbsp;</strong>{{hero.name}}</p>
+            <p class="hero-description">
+                <strong>Bio: </strong>
+                {{hero.description}}
+            </p>
+        </div>
+        <aside class="hero-figure">
+            <figure>
+                <img src="../../assets/heroes-pictures/{{hero.picture}}">
+                <figcaption>{{hero.name}}</figcaption>
+            </figure>
+        </aside>
+    </div>
+</section>
+
