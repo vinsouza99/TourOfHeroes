@@ -1,7 +1,5 @@
 #hero-details-section{
-    min-height: 1000px;
     padding: 10px 10em 10px 10em;
-
 }
 
 .hero-details span,
@@ -25,7 +23,8 @@
 }
 aside {
     background-color:  lightgray;
-    width: 400px;
+    min-width: 400px;
+    width: 50em;
     height: 100%;
 }
 .hero-figure{
@@ -34,8 +33,24 @@ aside {
     text-align: center;
     padding-top: 10px;
 }
+figure img {
+    max-height: 50em;
+}
 figcaption {
     text-align: center;
     font-weight: bold;
     padding: 10px 0;
+}
+@media screen and (max-width: 1130px) {
+    #hero-details-section {
+        padding: 10px 1em;
+    }
+    .hero-description{
+        width: 100%;
+    }
+    .hero-content{
+        flex-direction: column;
+        justify-content:space-around;
+        align-items: center;
+    }
 }

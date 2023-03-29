@@ -1,12 +1,12 @@
 <section id="heroes-list">
-    <h2>Heroes List</h2>
+    <h2 class="marvel-font">Heroes List</h2>
     <hr>
     <br>
     <ul class="heroes">
         <li *ngFor="let hero of heroes">
-            <button [class.selected]="hero === selectedHero" type="button" (click)="onSelect(hero)" class="li-button">
+            <button type="button" class="li-button">
                 <span class="badge">{{hero.id}}</span>
-                <a href="#hero-details-section" class="name">{{hero.name}}</a>
+                <a routerLink="/detail/{{hero.id}}" class="name">{{hero.alias}}</a>
             </button>
         </li>
     </ul>
@@ -21,4 +21,3 @@
     </div>
     -->
 </section>
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>

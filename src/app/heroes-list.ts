@@ -1,14 +1,14 @@
 import { Hero } from './hero';
 
 export const HEROES: Hero[] = [
-    { id: 1, name: 'Windstorm', picture: 'windstorm.png', description: "A junkie, Windstorm was at some point found near-to-death in an alley of an unnamed city by the mutant Israel Super-Agent Sabra, who uses her powers to relive her, granting to her part of her powers and also her specific powers of controlling winds."},
-    { id: 2, name: 'Dr. Nice', picture:'', description:'' },
-    { id: 3, name: 'Bombasto', picture:'', description:'' },
-    { id: 4, name: 'Celeritas', picture:'', description:'' },
-    { id: 5, name: 'Magneta', picture:'', description:'' },
-    { id: 6, name: 'RubberMan', picture:'', description:'' },
-    { id: 7, name: 'Dynama', picture:'', description:'' },
-    { id: 8, name: 'Dr. IQ', picture:'', description:'' },
-    { id: 9, name: 'Magma', picture:'', description:'' },
-    { id: 10, name: 'Tornado', picture:'', description:'' }
+    { id: 1, name: 'James Howlett', alias:'Wolverine', picture: 'wolverine.png', description: "Cursed with a berserker fury, the violent mutant known as Wolverine has a reputation of both as an outstanding super hero and as a lethal killer. Born as James Howlett to a wealthy Canadian family at the end of the 19th century, he was forced to abandon his family after the tragic manifestation of his bestial abilities of accelerated healing factor, keenly enhanced senses and bone claws in each hand. Adopting the name Logan, he wandered the world, living a long life filled with blood, war and betrayal, having vile Sabretooth as his archenemy, and the Japanese warrior Ogun as his sensei. Unfortunately, by acting as a lone wolf, Logan was an unwitting subject of the Weapon X Program and had his bones coated in indestructible Adamantium, becoming an even more lethal asset. Rescued and assisted by Mac and Heather Hudson, he joined Department H as a Canadian government operative known as the Wolverine."},
+    { id: 2, name:'Anthony Stark', alias: 'Iron Man', picture:'ironman.png', description:"Tony Stark is a genius inventor and billionaire industrialist, who suits up in his armor of cutting-edge technology to become the super hero Iron Man. The adopted son of weapons manufacturer Howard Stark, Tony inherited his family's company at a young age following his parents' death. While overseeing a manufacturing plant in a foreign country, Stark was kidnapped by local terrorists. Instead of giving in to his captors' demands to build weapons for them, Stark created a powerful suit of armor for himself to escape. Returning to America, Stark further upgraded the armor and put his vast resources and intellect to use for the betterment of the world as Iron Man." },
+    { id: 3, name:'', alias: 'Bombasto', picture:'', description:'' },
+    { id: 4, name:'', alias: 'Celeritas', picture:'', description:'' },
+    { id: 5, name:'', alias: 'Magneta', picture:'', description:'' },
+    { id: 6, name:'', alias: 'RubberMan', picture:'', description:'' },
+    { id: 7, name:'', alias: 'Dynama', picture:'', description:'' },
+    { id: 8, name:'', alias: 'Dr. IQ', picture:'', description:'' },
+    { id: 9, name:'', alias: 'Magma', picture:'', description:'' },
+    { id: 10, name:'', alias: 'Tornado', picture:'', description:'' }
 ];

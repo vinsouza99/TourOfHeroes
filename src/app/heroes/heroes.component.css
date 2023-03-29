@@ -27,6 +27,7 @@ ul {
     width: 50px;
     flex-direction: column;
     justify-content: center;
+    font-family: 'Marvel', sans-serif;
 }
 .name {
     text-decoration: none;

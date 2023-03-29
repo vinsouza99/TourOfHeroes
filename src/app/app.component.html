@@ -73,12 +73,12 @@
   }
   i {
     color: white;
-    font-size: 20px;
-
+    font-size: 25px;
+    display: flex;
+    align-items: center;
   }
 
   footer {
-    margin-top: 8px;
     display: flex;
     justify-content: center;
     line-height: 20px;
@@ -126,11 +126,11 @@
   </div>
   <app-navbar></app-navbar>
   <div>
-    <app-heroes></app-heroes>
+    <router-outlet></router-outlet>
+    <!--<app-messages></app-messages>-->
   </div>
   <footer>
     &#169; Vinícius Souza 2023
   </footer>
 
 </div>
-<router-outlet></router-outlet>

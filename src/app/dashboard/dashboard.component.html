@@ -1,0 +1,9 @@
+<section>
+    <h2 id="top-heroes-header" class="marvel-font">Top Heroes</h2>
+    <hr>
+    <div class="heroes-menu">
+        <a routerLink="/detail/{{hero.id}}" *ngFor="let hero of heroes">
+            {{hero.alias}}
+        </a>
+    </div>
+</section>

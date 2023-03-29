@@ -7,9 +7,14 @@ h1 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 100px;
 }
+h2 {
+    font-size: 30px;
+}
 h2, h3 {
     color: #444;
     font-family: Arial, Helvetica, sans-serif;
+}
+h3 {
     font-weight: lighter;
 }
 body, input[type="text"], button {
@@ -65,6 +70,7 @@ section {
     width: fit-content;
     padding: 20px 20px 0px 20px;
     text-align: center;
+    overflow: hidden;
 }
 .page-header {
     background-color: rgb(58, 47, 47);
@@ -75,15 +81,28 @@ section {
     font-size: 20px;
     color: rgb(104, 96, 96);
 }
-@media screen and (max-width: 767px) {
-    .header-text h1{
-        margin: 0;
-    }
+@media screen and (max-width: 1130px) {
     .header-text {
-        padding: 0;
+        width: 550px;
+        padding: 20px 0px 0px 0px;
+    }
+    section {
+        padding: 10px 1em;
     }
 }
+@media screen and (max-width: 600px){
+    .header-text {
+        width: fit-content;
+        padding: 0px 20px;
+    }
+    .header-text h1 {
+        font-size: 100px;
+    }
+    .header-img {
+        height: 50em;
+    }
 
+}
 /* everywhere else */
 * {
 font-family: Arial, Helvetica, sans-serif;
