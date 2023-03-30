@@ -18,12 +18,7 @@
 .hero-name-edit-mode{
     justify-content: space-between;
 }
-.edit-button{
-    color: darkred;
-    background-color: inherit;
-    margin:0 0 0 10px;
-    padding: 5px;
-}
+
 .save-button{
     color: white;
     background-color: rgb(39, 219, 84);

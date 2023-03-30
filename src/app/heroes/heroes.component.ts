@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 
@@ -24,5 +25,11 @@ export class HeroesComponent {
 
   ngOnInit(): void {
     this.getHeroes();
+  }
+
+  delete(hero:Hero): void{
+    this.heroes = this.heroes.filter(h => h !== hero);
+    this.heroService.deleteHero(hero.id).subscribe();
+
   }
 }

@@ -1,0 +1,36 @@
+<section *ngIf="hero" id="edit-hero-details-section" class="hero-details">
+    <div class="hero-name hero-name-edit-mode">
+        <h2 class="marvel-font">New Hero</h2>
+        <button 
+            class="save-button" 
+            title="Save changes"
+            type="button" 
+            (click)="add(hero)"
+            >
+                <i class="fa fa-check"></i>
+                Save Hero
+        </button>
+    </div>
+    <hr>
+    <br>
+    <div class="hero-content">
+        <div class="hero-info">
+            <p><strong>Name:&nbsp;</strong><input type="text" [(ngModel)]="hero.name" value="{{hero.name}}"/></p>
+            <br>
+            <p><strong>Alias:&nbsp;</strong><input type="text" [(ngModel)]="hero.alias" value="{{hero.alias}}"/></p>
+            <div class="hero-description">
+                <strong>Bio: </strong>
+                <br>
+                <textarea [(ngModel)]="hero.description" value="{{hero.description}}"></textarea>
+            </div>
+        </div>
+        <!--
+        <aside class="hero-figure">
+            <figure>
+                <img src="../../assets/heroes-pictures/{{hero.picture}}">
+                <figcaption>{{hero.alias}}</figcaption>
+            </figure>
+        </aside>
+        -->
+    </div>
+</section>

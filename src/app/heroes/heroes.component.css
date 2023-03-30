@@ -17,6 +17,18 @@
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
+.add-hero-button-div {
+    display: flex;
+    justify-content: flex-end;
+}
+.add-hero-button {
+    border-radius: 20px 20px 20px 20px;
+    font-family: sans-serif;
+    font-weight: bold;
+    height: 50px;
+    padding: 0;
+    margin-right: 0;
+}
 ul {
     list-style: none;
 }
@@ -28,6 +40,7 @@ ul {
     flex-direction: column;
     justify-content: center;
     font-family: 'Marvel', sans-serif;
+    font-weight: bold;
 }
 .name {
     text-decoration: none;
@@ -38,10 +51,29 @@ ul {
     width: 100%;
     height: 100%;
 }
+a {
+    text-decoration: none;
+    color: white;
+    height: 100px;
+    padding:10px;
+}
 .selected > .name {
     color: whitesmoke;
 }
 .selected,
 .selected:hover {
     background-color: rgb(179, 30, 30);
+}
+.delete-button{
+    font-size: 15px;
+    color: darkred;
+    background-color: inherit;
+    padding: 5px;
+    margin:0;
+    height: 100%;
+    width:50px;
+}
+
+.delete-button:hover {
+    background-color: lightgray;
 }

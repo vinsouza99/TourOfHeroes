@@ -7,17 +7,22 @@
             <button type="button" class="li-button">
                 <span class="badge">{{hero.id}}</span>
                 <a routerLink="/detail/{{hero.id}}" class="name">{{hero.alias}}</a>
+                <button 
+                    type="button" 
+                    class="delete-button" 
+                    title="Delete hero"
+                    (click)="delete(hero)">
+                    <i class="fa fa-trash"></i>
+                </button>
             </button>
         </li>
     </ul>
-    <!--
-    <div *ngIf="selectedHero">
-        <h2>{{selectedHero.name | uppercase}} Details</h2>
-        <div>id: {{selectedHero.id}}</div>
-        <div>
-            <label for="hero-name">Hero name: </label>
-            <input id="hero-name" [(ngModel)]="selectedHero.name" placeholder="name">
-        </div>
+    <div class="add-hero-button-div">
+        <button class="add-hero-button">
+            <a routerLink="/new">
+                <i class="fa fa-plus"></i>
+                &nbsp;Add Hero
+            </a>
+        </button>
     </div>
-    -->
 </section>

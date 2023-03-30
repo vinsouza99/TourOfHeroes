@@ -13,11 +13,10 @@ ul {
 }
 
 li {
-    padding: 5px 10px;
     width:150px;
     min-width: fit-content;
     font-size: 30px;
-    border-bottom: solid 5px whitesmoke;
+    border-bottom: solid 10px whitesmoke;
 }
 .separator{
     margin: auto 0;

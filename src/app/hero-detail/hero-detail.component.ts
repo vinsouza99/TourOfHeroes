@@ -11,6 +11,7 @@ import { HeroService } from '../hero.service';
 })
 export class HeroDetailComponent {
   hero: Hero | undefined;
+  editMode: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,5 +27,17 @@ export class HeroDetailComponent {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.heroService.getHero(id)
     .subscribe(hero => this.hero = hero);
+  }
+
+  toggleEditMode(): void {
+    this.editMode = !this.editMode;
+  }
+
+  save(){
+    if (this.hero) {
+      this.heroService.updateHero(this.hero)
+        .subscribe(() => this.toggleEditMode());
+    }
+    
   }
 }
