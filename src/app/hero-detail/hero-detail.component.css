@@ -1,5 +1,6 @@
 #hero-details-section{
     padding: 10px 10em 10px 10em;
+    min-height: fit-content;
 }
 
 .hero-details span,
@@ -79,13 +80,14 @@ aside {
     height: 100%;
 }
 .hero-figure{
+    position: relative;
     display: flex;
     flex-direction: column;
     text-align: center;
     padding-top: 10px;
 }
 figure img {
-    max-height: 50em;
+    max-height: 40em;
     max-width: 80%;
 }
 figcaption {
@@ -94,8 +96,10 @@ figcaption {
     padding: 10px 0;
 }
 @media screen and (max-width: 1130px) {
-    #hero-details-section {
+    #hero-details-section,
+    #edit-hero-details-section {
         padding: 10px 1em;
+        height: fit-content;
     }
     .hero-description{
         width: 100%;

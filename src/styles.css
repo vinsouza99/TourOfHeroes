@@ -45,6 +45,8 @@ button:disabled {
 section {
     padding: 10px 10em 10px 10em;
     margin-top: 10px;
+    min-height: fit-content;
+    height:800px;
 }
 .marvel-font{
     font-family: "Marvel";
@@ -88,6 +90,7 @@ section {
     }
     section {
         padding: 10px 1em;
+        height: 50em;
     }
 }
 @media screen and (max-width: 600px){

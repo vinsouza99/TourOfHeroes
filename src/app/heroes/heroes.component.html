@@ -6,7 +6,7 @@
         <li *ngFor="let hero of heroes">
             <button type="button" class="li-button">
                 <span class="badge">{{hero.id}}</span>
-                <a routerLink="/detail/{{hero.id}}" class="name">{{hero.alias}}</a>
+                <a routerLink="/heroes/details/{{hero.id}}" class="name">{{hero.alias}}</a>
                 <button 
                     type="button" 
                     class="delete-button" 
@@ -19,7 +19,7 @@
     </ul>
     <div class="add-hero-button-div">
         <button class="add-hero-button">
-            <a routerLink="/new">
+            <a routerLink="/heroes/new">
                 <i class="fa fa-plus"></i>
                 &nbsp;Add Hero
             </a>

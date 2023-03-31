@@ -8,6 +8,7 @@
 }
 .form-row {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
 }
 .form-row> div {
@@ -48,20 +49,21 @@ textarea {
 }
 .alert {
     width: 100%;
-    padding: 10px;
-    border: solid 1px lightgray;
 }
 .danger {
-    color: white;
-    background-color: #fa4b48;
-    border-color: #fd3935;
+    color: #fa4b48;
+    background-color: inherit;
 }
 .success {
     color:white;
     background-color: #5ee465;
-    border-color: #49df50;
-    margin: 5px 0px;
+    border: solid 1px #49df50;
     border-radius: 5px;
+    padding: 10px;
+    margin: 5px 0px;
+}
+.success i {
+    font-weight: bold;
 }
 
 .ng-valid[required], .ng-valid.required  {
@@ -71,4 +73,13 @@ textarea {
 
 .ng-invalid:not(form)  {
     border-left: 5px solid #a94442; /* red */
+}
+
+@media screen and (max-width: 470px) {
+    .form-row {
+        flex-direction: column;
+    }
+    .last{
+        margin-left: 0px;
+    }
 }
