@@ -56,6 +56,18 @@ export class HeroService {
     );
   }
 
+  searchHeroes(search : String): Observable<Hero[]>{
+    if(search.trim()){
+      return this.http.get<Hero[]>(`${this.heroesUrl}/?alias=${search}`).pipe(
+        tap(x => x.length ?
+           this.log(`found heroes matching "${search}"`) :
+           this.log(`no heroes matching "${search}"`)),
+        catchError(this.handleError<Hero[]>('searchHeroes', []))
+      );
+    }
+    return of([]);
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);

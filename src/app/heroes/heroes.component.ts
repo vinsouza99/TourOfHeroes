@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import * as $ from 'jquery';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 
@@ -25,6 +25,13 @@ export class HeroesComponent {
 
   ngOnInit(): void {
     this.getHeroes();
+    setTimeout(function() {
+      const $div : string = "#heroes-list";
+      const offset : any = $($div).offset();
+      $('html, body').animate({
+          scrollTop: offset.top
+      }, 300);
+    }, 300);
   }
 
   delete(hero:Hero): void{

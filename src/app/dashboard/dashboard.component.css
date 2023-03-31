@@ -7,23 +7,26 @@ h2 {
   padding: 0;
   margin: auto;
   max-width: 1000px;
+  height: 20em;
 
   /* flexbox */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-content: flex-start;
-  align-items: flex-start;
+  align-content: center;
+  align-items: center;
 }
 
 a {
   background-color: darkred;
   border-radius: 2px;
   padding: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   text-decoration: none;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #fff;
   text-align: center;
   width: 100%;
@@ -47,6 +50,22 @@ a {
 a:hover {
   background-color: rgb(179, 30, 30);
   cursor:pointer;
+  animation: focusOnHero 0.2s;
+  animation-fill-mode: forwards;
+
+}
+@keyframes focusOnHero {
+  0% {
+    width: 18%;
+    height: fit-content;
+    font-size: 1.6rem;
+    color: white;
+  }
+  100% {
+    width: 20%;
+    height: 50px;
+    font-size: 2rem;
+  }
 }
 
 #top-heroes-header {
