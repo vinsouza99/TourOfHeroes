@@ -1,0 +1,32 @@
+<div *ngIf="submitted" class="alert success">
+    Hero succesfully added!
+</div>
+<form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+    <div class="form-group">
+        <div class="form-row">
+            <div class="inputs-div">
+                <label for="name" class="marvel-font">Hero Name</label>
+                <input type="text" class="form-control"  id="name" [(ngModel)]="model.name" name="name" #name="ngModel" required/>
+                <div [hidden]="name.valid || name.pristine" class="alert danger" role="alert">Name is required</div>
+            </div>
+            <div  class="inputs-div last">
+                <label for="alias" class="marvel-font">Alias</label>
+                <input type="text" class="form-control" id="alias" [(ngModel)]="model.alias" name="alias" #alias="ngModel" required/>
+                <div [hidden]="alias.valid || alias.pristine" class="alert  danger" role="alert">Alias is required</div>
+            </div>
+        </div>
+        <label for="bio" class="marvel-font">Hero Bio</label>
+        <textarea class="form-control" id="bio" [(ngModel)]="model.description" name="description" required></textarea>
+        <div>
+            <button 
+                class="save-button" 
+                title="Save changes"
+                type="submit"
+                [disabled]="!heroForm.form.valid"
+                >
+                    <i class="fa fa-check"></i>
+                    Save Hero
+            </button>
+        </div>
+    </div>
+</form>

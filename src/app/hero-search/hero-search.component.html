@@ -1,7 +1,9 @@
 <section id="search-component">
     <h2 class="marvel-font">Hero Search</h2>
-    <input #searchBox id="search-box" (input)="search(searchBox.value)" />
-  
+    <div class="searchbar">
+      <div class="search-icon"><i class="fa fa-search"></i></div>
+      <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+    </div>
     <ul class="search-result">
       <li *ngFor="let hero of heroes$ | async" >
         <a routerLink="/detail/{{hero.id}}">

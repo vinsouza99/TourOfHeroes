@@ -1,0 +1,74 @@
+.form-group {
+    border: solid 1px lightgray;
+    padding: 10px 2em;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.form-row {
+    display: flex;
+    justify-content: space-between;
+}
+.form-row> div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.last{
+    margin-left: 10px;
+}
+.save-button{
+    color: white;
+    background-color: #42A948;
+    font-family: sans-serif;
+    font-weight: bold;
+    padding:10px;
+}
+.save-button:hover{
+    background-color: #60ca66;
+}
+
+label {
+    font-size: 25px;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+input, textarea {
+    border: solid 1px gray;
+    border-left: solid 3px darkred;
+    padding: 5px;
+    height: 30px;
+    border-radius: 5px;
+    outline: none;
+}
+textarea {
+    resize: none;
+    height: 150px;
+}
+.alert {
+    width: 100%;
+    padding: 10px;
+    border: solid 1px lightgray;
+}
+.danger {
+    color: white;
+    background-color: #fa4b48;
+    border-color: #fd3935;
+}
+.success {
+    color:white;
+    background-color: #5ee465;
+    border-color: #49df50;
+    margin: 5px 0px;
+    border-radius: 5px;
+}
+
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+    border-color: green;
+}
+
+.ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+}

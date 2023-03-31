@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import * as $ from 'jquery';
+
 
 @Component({
   selector: 'app-navbar',
@@ -8,5 +10,13 @@ import { Component } from '@angular/core';
 })
 
 export class NavBarComponent {
-
+  scrollPage() : void {
+    setTimeout(function() {
+      const $destination : string = "nav";
+      const offset : any = $($destination).offset();
+      $('html, body').animate({
+          scrollTop: offset.top
+      }, 500);
+    }, 300);
+  }
 }

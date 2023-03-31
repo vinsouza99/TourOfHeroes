@@ -74,7 +74,7 @@ textarea {
 }
 aside {
     background-color:  lightgray;
-    min-width: 400px;
+    min-width: 350px;
     width: 50em;
     height: 100%;
 }
@@ -107,5 +107,8 @@ figcaption {
         flex-direction: column;
         justify-content:space-around;
         align-items: center;
+    }
+    aside{
+        width: 100%;
     }
 }
