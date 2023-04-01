@@ -1,0 +1,37 @@
+section {
+    min-height: fit-content;
+}
+#greeting-div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+#greeting {
+    font-size: 60px;
+    letter-spacing: 2px;
+}
+#about-div {
+    min-height: fit-content;
+}
+p{
+    font-size: 25px;
+    line-height: 40px;
+    padding:0 10em;
+    text-align: justify;
+    margin: 10px 0px;
+}
+a {
+    text-decoration: none;
+    color: darkred;
+}
+a:hover {
+    color:rgb(212, 62, 62)
+}
+
+@media (max-width: 1400px) {
+    p{
+        padding: 0 10px;
+    }
+  }
