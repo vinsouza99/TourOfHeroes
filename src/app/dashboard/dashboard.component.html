@@ -2,7 +2,7 @@
     <h2 id="top-heroes-header" class="marvel-font">Top Heroes</h2>
     <hr>
     <div class="heroes-menu">
-        <a class="marvel-font" routerLink="/heroes/details/{{hero.id}}" *ngFor="let hero of heroes">
+        <a class="marvel-font hero-card" routerLink="/heroes/details/{{hero.id}}" *ngFor="let hero of heroes" id="{{hero.id}}">
             {{hero.alias}}
         </a>
     </div>

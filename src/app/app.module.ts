@@ -16,7 +16,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroComponent } from './hero/hero.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { HeroFormComponent } from './hero-form/hero-form.component';
-
+import { DialogComponent } from './dialog/dialog.component';
+import { MatDialog, MatDialogModule, MatDialogRef , MAT_DIALOG_DATA} from '@angular/material/dialog';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,11 @@ import { HeroFormComponent } from './hero-form/hero-form.component';
     DashboardComponent,
     HeroComponent,
     HeroSearchComponent,
-    HeroFormComponent
+    HeroFormComponent,
+    DialogComponent
+  ],
+  entryComponents: [
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -37,9 +42,15 @@ import { HeroFormComponent } from './hero-form/hero-form.component';
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    )
+    ),
+    MatDialogModule
+    
   ],
-  providers: [],
+  providers: [
+    MatDialog,
+    {provide: MatDialogRef,useValue: {}},
+    { provide: MAT_DIALOG_DATA, useValue: {} },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

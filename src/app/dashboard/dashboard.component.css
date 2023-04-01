@@ -17,6 +17,11 @@ h2 {
   align-content: center;
   align-items: center;
 }
+.hero-card {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
 
 a {
   background-color: darkred;
@@ -33,6 +38,7 @@ a {
   min-width: 70px;
   margin: .5rem auto;
   box-sizing: border-box;
+  font-style: italic;
 
   /* flexbox */
   order: 0;
@@ -52,8 +58,10 @@ a:hover {
   cursor:pointer;
   animation: focusOnHero 0.2s;
   animation-fill-mode: forwards;
+  text-shadow: 4px 1px 1px rgb(41, 41, 41);
 
 }
+
 @keyframes focusOnHero {
   0% {
     width: 18%;
@@ -62,8 +70,8 @@ a:hover {
     color: white;
   }
   100% {
-    width: 20%;
-    height: 50px;
+    width: 22%;
+    height: 100px;
     font-size: 2rem;
   }
 }

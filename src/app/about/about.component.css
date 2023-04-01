@@ -9,8 +9,11 @@ section {
     margin-bottom: 10px;
 }
 #greeting {
-    font-size: 60px;
+    font-size: 80px;
     letter-spacing: 2px;
+    font-style: italic;
+    text-shadow: 4px 1px 1px rgb(41, 41, 41);
+    color: rgb(204, 32, 32);
 }
 #about-div {
     min-height: fit-content;
