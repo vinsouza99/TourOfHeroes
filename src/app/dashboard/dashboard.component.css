@@ -56,7 +56,7 @@ a {
 a:hover {
   background-color: rgb(179, 30, 30);
   cursor:pointer;
-  animation: focusOnHero 0.2s;
+  animation: focusOnHero 0.5s;
   animation-fill-mode: forwards;
   text-shadow: 4px 1px 1px rgb(41, 41, 41);
 
@@ -67,7 +67,6 @@ a:hover {
     width: 18%;
     height: fit-content;
     font-size: 1.6rem;
-    color: white;
   }
   100% {
     width: 22%;

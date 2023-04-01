@@ -4,4 +4,5 @@ export interface Hero {
     alias: String|null;
     picture: string;
     description: string|null;
+    powers: string[];
   }

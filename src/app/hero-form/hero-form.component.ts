@@ -11,8 +11,9 @@ import { HeroService } from '../hero.service';
 export class HeroFormComponent {
   constructor(private heroService:HeroService){}
 
-  model : Hero= {id:0, name:null, alias:null,picture:"noimage.png",description:null};
+  model : Hero= {id:0, name:null, alias:null,picture:"noimage.png", powers:[],description:null};
   nextId: number | undefined;
+  powersList: string = "";
 
   submitted = false;
 
@@ -20,7 +21,7 @@ export class HeroFormComponent {
     this.heroService.getHeroes()
     .subscribe(heroes => {
       this.nextId = heroes.length + 1;
-      this.model = {id:this.nextId, name:null, alias:null, picture:"noimage.png", description:null};
+      this.model = {id:this.nextId, name:null, alias:null, picture:"noimage.png", powers:[], description:null};
     });
 
   }
@@ -28,6 +29,9 @@ export class HeroFormComponent {
   onSubmit() { 
     this.submitted = true; 
     console.log(this.model);
+      if(this.powersList !== ""){
+        this.model.powers = this.powersList.split(",");
+      }
     this.heroService.addHero(this.model)
       .subscribe(() => { 
         console.log("Hero added successfully");

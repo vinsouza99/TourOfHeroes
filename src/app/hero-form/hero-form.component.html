@@ -15,8 +15,22 @@
                 <div [hidden]="alias.valid || alias.pristine" class="alert  danger" role="alert">Alias is required</div>
             </div>
         </div>
+        <div class="form-row">
+            <div class="inputs-div">
+                <label for="powers" class="marvel-font">Powers</label>
+                <input 
+                    type="text" 
+                    class="form-control"  
+                    id="powers" 
+                    [(ngModel)]="powersList" 
+                    name="powers" 
+                    #powers="ngModel"
+                    placeholder="Separe powers with commas"
+                    />
+            </div>
+        </div>
         <label for="bio" class="marvel-font">Hero Bio</label>
-        <textarea class="form-control" id="bio" [(ngModel)]="model.description" name="description" required></textarea>
+        <textarea class="form-control" id="bio" [(ngModel)]="model.description" name="description"></textarea>
         <div>
             <button 
                 class="save-button" 

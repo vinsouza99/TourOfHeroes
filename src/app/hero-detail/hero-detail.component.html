@@ -14,19 +14,25 @@
     <br>
     <div class="hero-content">
         <div class="hero-info">
-            <p><strong>Name:&nbsp;</strong>{{hero.name}}</p>
-            <br>
-            <p><strong>Alias:&nbsp;</strong>{{hero.alias}}</p>
             <p class="hero-description">
-                <strong>Bio: </strong>
                 {{hero.description}}
             </p>
+            <hr>
+            <h2 class="marvel-font" id="powers-header">Powers</h2>
+            <ul class="hero-powers">
+                <li *ngFor="let power of powers">
+                    {{power}}
+                </li>
+            </ul>
         </div>
         <aside class="hero-figure">
             <figure>
                 <img src="../../assets/heroes-pictures/{{hero.picture}}">
-                <figcaption>{{hero.alias}}</figcaption>
             </figure>
+            <div class="profile-header">Alias</div>
+            <div class="profile-info">{{hero.alias}}</div>
+            <div class="profile-header">Name</div>
+            <div class="profile-info">{{hero.name}}</div>
         </aside>
     </div>
 </section>
@@ -51,17 +57,21 @@
             <p><strong>Name:&nbsp;</strong><input type="text" [(ngModel)]="hero.name" value="{{hero.name}}"/></p>
             <br>
             <p><strong>Alias:&nbsp;</strong><input type="text" [(ngModel)]="hero.alias" value="{{hero.alias}}"/></p>
-            <div class="hero-description">
+            <p class="hero-description">
                 <strong>Bio: </strong>
                 <br>
                 <textarea [(ngModel)]="hero.description" value="{{hero.description}}"></textarea>
-            </div>
+            </p>
+            <p><strong>Powers:&nbsp;</strong><input type="text" [(ngModel)]="powers" value="{{powers}}"/></p>
         </div>
         <aside class="hero-figure">
             <figure>
                 <img src="../../assets/heroes-pictures/{{hero.picture}}">
-                <figcaption>{{hero.alias}}</figcaption>
             </figure>
+            <div class="profile-header">Alias</div>
+            <div class="profile-info">{{hero.alias}}</div>
+            <div class="profile-header">Name</div>
+            <div class="profile-info">{{hero.name}}</div>
         </aside>
     </div>
 </section>

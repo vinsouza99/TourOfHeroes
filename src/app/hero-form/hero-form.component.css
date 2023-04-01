@@ -42,6 +42,7 @@ input, textarea {
     height: 30px;
     border-radius: 5px;
     outline: none;
+    font-family: sans-serif;
 }
 textarea {
     resize: none;
@@ -74,7 +75,10 @@ textarea {
 .ng-invalid:not(form)  {
     border-left: 5px solid #a94442; /* red */
 }
-
+::placeholder {
+    font-family: sans-serif;
+    font-style: italic;
+}
 @media screen and (max-width: 470px) {
     .form-row {
         flex-direction: column;

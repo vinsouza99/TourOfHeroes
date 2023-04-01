@@ -25,7 +25,7 @@ export class HeroComponent {
     this.heroService.getHeroes()
     .subscribe(heroes => {
       this.nextId = heroes.length + 1;
-      this.hero = {id:this.nextId, name:"", alias:"", picture:"", description:""};
+      this.hero = {id:this.nextId, name:"", alias:"", picture:"", powers:[], description:""};
     });
 
   }

@@ -86,11 +86,7 @@ figure img {
     max-height: 50em;
     max-width: 80%;
 }
-figcaption {
-    text-align: center;
-    font-weight: bold;
-    padding: 10px 0;
-}
+
 @media screen and (max-width: 1130px) {
     #hero-details-section {
         padding: 10px 1em;
