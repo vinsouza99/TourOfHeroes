@@ -32,7 +32,6 @@ export class DashboardComponent implements OnInit {
       const card = '#'+hero.id;
       $(card).hover(()=>{
         $(card).css("background-image",'url("../../assets/heroes-pictures/'+hero.picture+'")');
-        console.log(hero.alias);
       },
       function(){
         $(card).css("background-image", "none");
@@ -40,7 +39,4 @@ export class DashboardComponent implements OnInit {
     })
   }
 
-  showHeroBackground():void {
-    console.log("worked");
-  }
 }

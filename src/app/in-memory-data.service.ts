@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Hero } from './hero';
+import { Comment } from './comment';
 
 @Injectable({
   providedIn: 'root',
@@ -19,15 +20,13 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 9, name: 'Scott Lang', alias: 'Ant-Man', picture:'antman.png', powers:[], description:"Created by Stan Lee, Larry Lieber and Jack Kirby, Ant-Man's first appearance was in Tales to Astonish #27 (January 1962) but first appeared in costume in Tales to Astonish #35 (September 1962). The persona was originally the brilliant scientist Hank Pym's superhero alias after inventing a substance that can change size, but reformed thieves Scott Lang and Eric O'Grady also took on the mantle after the original changed his superhero identity to various other aliases, such as Giant-Man, Goliath, and Yellowjacket. Pym's Ant-Man is also a founding member of the super hero team known as the Avengers. The character has appeared in several films based on the Marvel character, such as Ant-Man (2015), Captain America: Civil War (2016), Ant-Man and the Wasp (2018), Avengers: Endgame (2019), and Ant-Man and the Wasp: Quantumania (2023)." },
       { id: 10, name: 'Wade Wilson', alias: 'Deadpool', picture:'deadpool.png', powers:[], description:'Deadpool is a character appearing in American comic books published by Marvel Comics. Created by Fabian Nicieza and Rob Liefeld, the character first appeared in New Mutants #98 (December 1990). In his comic book appearances, Deadpool is initially depicted as a supervillain of the New Mutants and X-Force, though later stories would portray him as an antihero. Deadpool is the alter ego of Wade Wilson, a disfigured Canadian mercenary with superhuman regenerative healing abilities. He is known for his tendency to joke incessantly and break the fourth wall for humorous effect.' }
   ];
-    return {heroes};
+  const comments = [
+    { id: 1, username: 'user01', dateTime:'02/04/2023 08:35:29', heroId: 1, comment:"Test", replies: [], upVotes: 0, downVotes:0},
+];
+    return {heroes, comments};
   }
 
-  // Overrides the genId method to ensure that a hero always has an id.
-  // If the heroes array is empty,
-  // the method below returns the initial number (10).
-  // if the heroes array is not empty, the method below returns the highest
-  // hero id + 1.
-  genId(heroes: Hero[]): number {
-    return heroes.length > 0 ? Math.max(...heroes.map(hero => hero.id)) + 1 : 10;
+  genId(elements: Hero[]|Comment[]): number {
+    return elements.length > 0 ? Math.max(...elements.map(e => e.id)) + 1 : 10;
   }
 }

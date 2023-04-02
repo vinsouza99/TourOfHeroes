@@ -1,0 +1,11 @@
+//{comment:"Test", replies: [], upVotes: 0, downVotes:0},
+export interface Comment {
+    id:number;
+    username:String;
+    dateTime: String;
+    heroId:number;
+    comment:String;
+    replies: number[];
+    upVotes:number;
+    downVotes:number;
+}

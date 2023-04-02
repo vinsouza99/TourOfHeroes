@@ -12,7 +12,6 @@ export class HeroFormComponent {
   constructor(private heroService:HeroService){}
 
   model : Hero= {id:0, name:null, alias:null,picture:"noimage.png", powers:[],description:null};
-  nextId: number | undefined;
   powersList: string = "";
   percentDone: number = 0;
   uploadSuccess: boolean = false;
@@ -22,8 +21,8 @@ export class HeroFormComponent {
   ngOnInit() : void {
     this.heroService.getHeroes()
     .subscribe(heroes => {
-      this.nextId = heroes.length + 1;
-      this.model = {id:this.nextId, name:null, alias:null, picture:"noimage.png", powers:[], description:null};
+      const nextId = heroes.length + 1;
+      this.model = {id:nextId, name:null, alias:null, picture:"noimage.png", powers:[], description:null};
     });
 
   }

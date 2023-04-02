@@ -80,4 +80,36 @@
         </aside>
     </div>
 </section>
+<div class="comment-section" *ngIf="hero">
+    <form (ngSubmit)="onSubmitComment()" class="comment-form">
+        <textarea class="comment-textarea" placeholder="Leave your anonymous comment..." [(ngModel)]="commentModel.comment" name="comment" required></textarea>
+        <button
+            class="save-button" 
+            title="Post comment"
+            type="submit" 
+        >
+            <i class="fa fa-check"></i>
+            Post
+        </button>
+    </form>
+    <hr>
+    <h2 class="marvel-font comment-header">Comments ({{comments.length}})</h2>
+    <br>
+    <ul class="comment-list">
+        <li class="comment-component" *ngFor="let comment of comments">
+            <div class="comment-info">
+                <h3 class="comment-username">{{comment.username}}</h3>
+                <span class="comment-datetime">{{comment.dateTime}}</span>
+            </div>
+            <p class="comment-content">{{comment.comment}}</p>
+            <ul class="comment-actions">
+                <li class="comment-upvote action"><button type="button" (click) = "voteComment(comment.id, true)" id="upvotes-{{comment.id}}" class="unvoted">{{comment.upVotes}}&nbsp;<i class="fa fa-thumbs-up"></i></button></li>
+                <li class="comment-downvote action"><button type="button"  (click) = "voteComment(comment.id, false)" id="downvotes-{{comment.id}}" class="unvoted">{{comment.downVotes}}&nbsp;<i class="fa fa-thumbs-down"></i></button></li>
+                <!--
+                <li class="comment-show-replies-button action"><button type="button">Replies<i class="fa fa-level-down"></i> </button></li>
+                -->
+            </ul>
+        </li>
+    </ul>
 
+</div>
