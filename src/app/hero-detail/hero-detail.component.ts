@@ -13,6 +13,9 @@ export class HeroDetailComponent {
   hero: Hero | undefined;
   editMode: boolean = false;
   powers: String[] = [];
+  powersExist: boolean = true;
+  loaded: boolean = false;
+
 
   constructor(
     private route: ActivatedRoute,
@@ -29,8 +32,12 @@ export class HeroDetailComponent {
     this.heroService.getHero(id)
     .subscribe(hero => {
       this.hero = hero;
+      this.loaded = true;
       if(this.hero){
         this.powers = this.hero.powers;
+        if(this.powers.length===0){
+          this.powersExist = false;
+        }
       }
     });
   }

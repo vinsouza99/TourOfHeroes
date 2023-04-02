@@ -1,3 +1,6 @@
+<section class="loading-page"*ngIf="!loaded">
+    <i class="fas fa-circle-notch fa-spin"></i>
+</section>
 <section *ngIf="hero && !editMode" id="hero-details-section" class="hero-details">
     <div class="hero-name">
         <h2 class="marvel-font">{{hero.alias}} Details</h2>
@@ -19,11 +22,12 @@
             </p>
             <hr>
             <h2 class="marvel-font" id="powers-header">Powers</h2>
-            <ul class="hero-powers">
+            <ul class="hero-powers" *ngIf="powersExist">
                 <li *ngFor="let power of powers">
                     {{power}}
                 </li>
             </ul>
+            <p *ngIf="!powersExist">No powers available for this hero...</p>
         </div>
         <aside class="hero-figure">
             <figure>
@@ -62,7 +66,8 @@
                 <br>
                 <textarea [(ngModel)]="hero.description" value="{{hero.description}}"></textarea>
             </p>
-            <p><strong>Powers:&nbsp;</strong><input type="text" [(ngModel)]="powers" value="{{powers}}"/></p>
+            <p><strong>Powers:&nbsp;</strong><input type="text"  [(ngModel)]="powers" value="{{powers}}" placeholder="Separe powers with commas"/></p>
+
         </div>
         <aside class="hero-figure">
             <figure>

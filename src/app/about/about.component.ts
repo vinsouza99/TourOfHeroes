@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
+  loaded: boolean = false;
+
+  ngOnInit(): void {
+    this.loaded = true;
+  }
 
 }

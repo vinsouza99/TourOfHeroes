@@ -21,10 +21,14 @@ export class HeroesComponent {
   
   heroes: Hero[] = [];
   selectedHero?: Hero;
+  loaded: boolean = false;
 
   getHeroes() : void {
     this.heroService.getHeroes()
-    .subscribe(heroes => this.heroes = heroes);
+    .subscribe(heroes => {
+      this.heroes = heroes;
+      this.loaded = true;
+    });
   }
   openDialog(hero:Hero): void {
     const dialogRef = this.dialog.open(DialogComponent, {

@@ -1,4 +1,7 @@
-<section id="heroes-list">
+<section class="loading-page"*ngIf="!loaded">
+    <i class="fas fa-circle-notch fa-spin"></i>
+</section>
+<section id="heroes-list" *ngIf="loaded">
     <h2 class="marvel-font">Heroes List</h2>
     <hr>
     <br>
@@ -10,7 +13,7 @@
                 <button 
                     type="button" 
                     class="delete-button" 
-                    title="Delete hero"
+                    title="Delete {{hero.alias}}"
                     (click)="openDialog(hero)">
                     <i class="fa fa-trash"></i>
                 </button>

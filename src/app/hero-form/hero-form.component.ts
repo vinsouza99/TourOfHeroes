@@ -14,6 +14,8 @@ export class HeroFormComponent {
   model : Hero= {id:0, name:null, alias:null,picture:"noimage.png", powers:[],description:null};
   nextId: number | undefined;
   powersList: string = "";
+  percentDone: number = 0;
+  uploadSuccess: boolean = false;
 
   submitted = false;
 

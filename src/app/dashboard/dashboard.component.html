@@ -1,4 +1,7 @@
-<section>
+<section class="loading-page"*ngIf="!loaded">
+    <i class="fas fa-circle-notch fa-spin"></i>
+</section>
+<section *ngIf="loaded">
     <h2 id="top-heroes-header" class="marvel-font">Top Heroes</h2>
     <hr>
     <div class="heroes-menu">

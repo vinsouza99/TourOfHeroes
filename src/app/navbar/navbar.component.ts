@@ -17,6 +17,6 @@ export class NavBarComponent {
       $('html, body').animate({
           scrollTop: offset.top
       }, 500);
-    }, 300);
+    }, 100);
   }
 }

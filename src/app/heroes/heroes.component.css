@@ -32,6 +32,7 @@
 ul {
     list-style: none;
 }
+
 .badge {
     background-color: darkred;
     color: whitesmoke;
@@ -57,16 +58,10 @@ a {
     height: 100px;
     padding:10px;
 }
-.selected > .name {
-    color: whitesmoke;
-}
-.selected,
-.selected:hover {
-    background-color: rgb(179, 30, 30);
-}
+
 .delete-button{
     font-size: 15px;
-    color: darkred;
+    color: gray;
     background-color: inherit;
     padding: 5px;
     margin:0;
@@ -75,5 +70,5 @@ a {
 }
 
 .delete-button:hover {
-    background-color: lightgray;
+    color:darkred;
 }
