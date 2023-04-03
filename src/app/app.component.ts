@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Tour of Heroes';
+  currentYear : number = 0;
+
+  ngOnInit(){
+    this.currentYear = new Date().getFullYear();
+  }
 }

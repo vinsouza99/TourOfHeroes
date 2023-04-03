@@ -5,7 +5,8 @@ export interface Comment {
     dateTime: String;
     heroId:number;
     comment:String;
-    replies: number[];
+    userDownvoted: boolean;
+    userUpvoted:boolean;
     upVotes:number;
     downVotes:number;
 }
