@@ -1,44 +1,67 @@
-<div *ngIf="submitted" class="alert success">
-    <i class="fa fa-check"></i>&nbsp;Hero succesfully added!
-</div>
 <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
-    <div>
+    <div *ngIf="submitted" class="alert success">
+        <i class="fa fa-check"></i>&nbsp;Hero succesfully added!
+    </div>
+    <div class="form-group">
         <div class="form-column">
-            <div class="form-group">
-                <div class="form-row">
-                    <div class="inputs-div">
-                        <label for="name" class="marvel-font">Hero Name*</label>
-                        <input type="text" class="form-control"  id="name" [(ngModel)]="model.name" name="name" #name="ngModel" required/>
-                        <div [hidden]="name.valid || name.pristine" class="alert danger" role="alert">Name is required</div>
-                    </div>
-                    <div  class="inputs-div last">
-                        <label for="alias" class="marvel-font">Alias*</label>
-                        <input type="text" class="form-control" id="alias" [(ngModel)]="model.alias" name="alias" #alias="ngModel" required/>
-                        <div [hidden]="alias.valid || alias.pristine" class="alert  danger" role="alert">Alias is required</div>
-                    </div>
+            <div class="form-row">
+                <div class="inputs-div">
+                    <label for="name" class="marvel-font">Hero Name*</label>
+                    <input type="text" class="form-control"  id="name" [(ngModel)]="model.name" name="name" #name="ngModel" required/>
+                    <div [hidden]="name.valid || name.pristine" class="alert danger" role="alert">Name is required</div>
                 </div>
-                <div class="form-row">
-                    <div class="inputs-div">
-                        <label for="powers" class="marvel-font">Powers</label>
-                        <input 
-                            type="text" 
-                            class="form-control"  
-                            id="powers" 
-                            [(ngModel)]="powersList" 
-                            name="powers" 
-                            #powers="ngModel"
-                            placeholder="Separe powers with commas"
-                            />
-                    </div>
+                <div  class="inputs-div last">
+                    <label for="alias" class="marvel-font">Alias*</label>
+                    <input type="text" class="form-control" id="alias" [(ngModel)]="model.alias" name="alias" #alias="ngModel" required/>
+                    <div [hidden]="alias.valid || alias.pristine" class="alert  danger" role="alert">Alias is required</div>
                 </div>
-                <label for="bio" class="marvel-font">Hero Bio</label>
-                <textarea class="form-control" id="bio" [(ngModel)]="model.description" name="description"></textarea>
+            </div>
+            <div class="form-row">
+                <div class="inputs-div">
+                    <label for="powers" class="marvel-font">Powers</label>
+                    <input 
+                        type="text" 
+                        class="form-control"  
+                        id="powers" 
+                        [(ngModel)]="powersList" 
+                        name="powers" 
+                        #powers="ngModel"
+                        placeholder="Separe powers with commas"
+                        />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="inputs-div">
+                    <label for="bio" class="marvel-font">Hero Bio</label>
+                    <textarea class="form-control" id="bio" [(ngModel)]="model.description" name="description"></textarea>
+                </div>
+            </div>
+        </div>
+        <input 
+            type="file"
+            class="file-input"
+            [accept]="requiredFileType"
+            (change)="onFileSelected($event)" 
+            #fileUpload>
+        <div class="form-column image-upload-div">
+            <div class="file-upload">
+                <button 
+                    mat-mini-fab 
+                    color="primary" 
+                    class="upload-btn form-control"
+                    type="button"
+                    (click)="fileUpload.click()">
+                        <img class="preview-picture" #picturePreviewImg>
+                        <i class="fa fa-id-badge" *ngIf="!picture"></i>
+                        <span>{{fileName || "No picture uploaded yet"}}</span>
+                </button>
             </div>
         </div>
     </div>
     <div>
         <button 
-            class="save-button" 
+            class="save-button"
+            [ngClass]="heroForm.form.valid ? '' : 'disabled'"
             title="Save changes"
             type="submit"
             [disabled]="!heroForm.form.valid"

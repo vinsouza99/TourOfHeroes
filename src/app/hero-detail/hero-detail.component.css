@@ -143,11 +143,20 @@ figure img {
     padding-top: 10px;
     font-family: "Marvel", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
-.comment-list {
+.comment-list,
+.no-comments-div {
     display: flex;
     flex-direction: column-reverse;
     background-color: whitesmoke;
     margin:0;
+}
+.no-comments-div {
+    height: 100px;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    color:gray;
 }
 .comment-component {
     list-style: none;

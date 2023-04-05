@@ -1,7 +1,15 @@
+form, section {
+    position: relative;
+}
 .form-group {
     border: solid 1px lightgray;
     padding: 10px 2em;
     border-radius: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.form-column {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -28,6 +36,17 @@
 }
 .save-button:hover{
     background-color: #60ca66;
+}
+.disabled,
+.disabled:hover {
+    background-color: lightgray;
+    color: gray;
+}
+
+.preview-picture {
+    max-width:100%;
+    max-height:250px;
+    opacity:0.8;
 }
 
 label {
@@ -66,6 +85,42 @@ textarea {
 .success i {
     font-weight: bold;
 }
+.upload-btn {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    color: gray;
+    background-color: inherit;
+    font-style: italic;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.upload-btn span {
+    margin: 10px;
+}
+.upload-btn i {
+    font-size: 120px;
+}
+.upload-btn:hover {
+    cursor: pointer;
+}
+.file-upload {
+    height: 100%;
+    display: table-cell;
+}
+.image-upload-div{
+    background-color: lightgray;
+    border: dashed 5px rgb(184, 184, 184);
+    border-radius: 10px;
+    width:50%;
+    margin-left: 50px;
+}
+.file-input {
+    display: none;
+  }
 
 .ng-valid[required], .ng-valid.required  {
     border-left: 5px solid #42A948; /* green */
@@ -78,6 +133,17 @@ textarea {
 ::placeholder {
     font-family: sans-serif;
     font-style: italic;
+}
+@media screen and (max-width: 1000px) {
+    .form-group {
+        display: block;
+        min-height: fit-content;
+    }
+    .image-upload-div{
+        width:100%;
+        margin-top: 10px;
+        margin-left: 0;
+    }
 }
 @media screen and (max-width: 470px) {
     .form-row {

@@ -3,6 +3,8 @@ export interface Hero {
     name: string|null;
     alias: String|null;
     picture: string;
-    description: string|null;
     powers: string[];
+    blob: Blob|null;
+    description: string|null;
+
   }

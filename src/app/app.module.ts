@@ -18,6 +18,7 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { HeroFormComponent } from './hero-form/hero-form.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { MatDialog, MatDialogModule, MatDialogRef , MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { HeroPictureDirective } from './hero-picture.directive';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MatDialog, MatDialogModule, MatDialogRef , MAT_DIALOG_DATA} from '@angu
     HeroComponent,
     HeroSearchComponent,
     HeroFormComponent,
-    DialogComponent
+    DialogComponent,
+    HeroPictureDirective
   ],
   entryComponents: [
     DialogComponent

@@ -1,7 +1,7 @@
 <section class="loading-page"*ngIf="!loaded">
     <i class="fas fa-circle-notch fa-spin"></i>
 </section>
-<section *ngIf="hero && !editMode" id="hero-details-section" class="hero-details">
+<section *ngIf="hero && !editMode"  id="hero-details-section" class="hero-details">
     <div class="hero-name">
         <h2 class="marvel-font">{{hero.alias}} Details</h2>
         <button 
@@ -18,20 +18,19 @@
     <div class="hero-content">
         <div class="hero-info">
             <p class="hero-description">
-                {{hero.description}}
+                {{bio || "No bio available for this character..."}}
             </p>
-            <hr>
             <h2 class="marvel-font" id="powers-header">Powers</h2>
             <ul class="hero-powers" *ngIf="powersExist">
                 <li *ngFor="let power of powers">
                     {{power}}
                 </li>
             </ul>
-            <p *ngIf="!powersExist">No powers available for this hero...</p>
+            <p *ngIf="!powersExist">No powers available for this character...</p>
         </div>
         <aside class="hero-figure">
             <figure>
-                <img src="../../assets/heroes-pictures/{{hero.picture}}">
+                <img #heroPictureImg id="heroPictureImg" appHeroPicture> 
             </figure>
             <div class="profile-header">Alias</div>
             <div class="profile-info">{{hero.alias}}</div>
@@ -71,7 +70,7 @@
         </div>
         <aside class="hero-figure">
             <figure>
-                <img src="../../assets/heroes-pictures/{{hero.picture}}">
+                <img appHeroPicture src="../../assets/heroes-pictures/{{hero.picture}}">
             </figure>
             <div class="profile-header">Alias</div>
             <div class="profile-info">{{hero.alias}}</div>
@@ -81,6 +80,8 @@
     </div>
 </section>
 <div class="comment-section" *ngIf="hero">
+    <hr>
+    <br>
     <form (ngSubmit)="onSubmitComment()" class="comment-form" #commentForm="ngForm">
         <textarea 
             class="comment-textarea" 
@@ -101,7 +102,7 @@
     <hr>
     <h2 class="marvel-font comment-header">Comments ({{comments.length}})</h2>
     <br>
-    <ul class="comment-list">
+    <ul class="comment-list" *ngIf="comments.length>0">
         <li class="comment-component" *ngFor="let comment of comments">
             <div class="comment-info">
                 <h3 class="comment-username">{{comment.username}}</h3>
@@ -109,10 +110,12 @@
             </div>
             <p class="comment-content">{{comment.comment}}</p>
             <ul class="comment-actions">
-                <li class="comment-upvote action" [ngClass]="{'voted':comment.userUpvoted, 'unvoted':!comment.userUpvoted}"><button type="button" (click) = "voteComment(comment.id, true)" id="upvotes-{{comment.id}}">{{comment.upVotes}}&nbsp;<i class="fa fa-thumbs-up"></i></button></li>
-                <li class="comment-downvote action" [ngClass]="{'voted':comment.userDownvoted, 'unvoted':!comment.userDownvoted}"><button type="button"  (click) = "voteComment(comment.id, false)" id="downvotes-{{comment.id}}">{{comment.downVotes}}&nbsp;<i class="fa fa-thumbs-down"></i></button></li>
+                <li class="comment-upvote action" [ngClass]="{'voted':comment.userUpvoted, 'unvoted':!comment.userUpvoted}"><button type="button" title="Upvote comment" (click) = "voteComment(comment.id, true)" id="upvotes-{{comment.id}}">{{comment.upVotes}}&nbsp;<i class="fa fa-thumbs-up"></i></button></li>
+                <li class="comment-downvote action" [ngClass]="{'voted':comment.userDownvoted, 'unvoted':!comment.userDownvoted}"><button type="button"  title="Downvote comment" (click) = "voteComment(comment.id, false)" id="downvotes-{{comment.id}}">{{comment.downVotes}}&nbsp;<i class="fa fa-thumbs-down"></i></button></li>
             </ul>
         </li>
     </ul>
-
+    <div class="no-comments-div" *ngIf="comments.length==0">
+        <span>No comments on this post yet... Be the first!</span>
+    </div>
 </div>
