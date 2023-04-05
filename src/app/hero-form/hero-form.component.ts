@@ -51,8 +51,6 @@ export class HeroFormComponent{
         });
     }
   }
-  ngOnDestroy(){
-  }
   onFileSelected(event:any) {
     const file:File = event.target.files[0];
 

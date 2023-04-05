@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ViewChild, ElementRef, QueryList, ViewChildren} from '@angular/core';
+import {AfterViewInit, Component, QueryList, ViewChildren} from '@angular/core';
 import { Hero } from '../hero';
 import { Comment } from '../comment';
 import { ActivatedRoute } from '@angular/router';
@@ -40,7 +40,6 @@ export class HeroDetailComponent implements AfterViewInit{
           var binaryData = [];
           binaryData.push(this.heroImgBlob);
           var src = URL.createObjectURL(new Blob(binaryData, {type: "image/png"}));
-          console.log(src);
           img.changeSource(src);
         })
       }else {
@@ -65,7 +64,6 @@ export class HeroDetailComponent implements AfterViewInit{
       this.loaded = true;
       if(this.hero){
         this.bio = this.hero.description == null ? undefined : this.hero.description;
-        console.log(hero);
         this.powers = this.hero.powers;
         if(this.powers.length===0){
           this.powersExist = false;
