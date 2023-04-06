@@ -7,8 +7,13 @@
     padding: 0;
     display: flex;
 }
-.li-button:hover {
-    background-color: rgb(190, 189, 189);
+ul  > :nth-child(even) .li-button:hover,
+.li-button:hover{
+    background-color: rgb(139, 139, 139);
+}
+
+.li-button:hover .delete-button {
+    color:darkred;
 }
 .li-button span, .li-button a {
     height: 100%;
@@ -29,8 +34,11 @@
     padding: 0;
     margin-right: 0;
 }
-ul {
+ul{
     list-style: none;
+}
+ul  > :nth-child(even) .li-button{
+    background-color: rgb(192, 191, 191);
 }
 
 .badge {
@@ -45,7 +53,7 @@ ul {
 }
 .name {
     text-decoration: none;
-    color: darkred;
+    color: rgb(192, 0, 0);
     flex-direction: column;
     justify-content: center;
     padding-left: 10px;
